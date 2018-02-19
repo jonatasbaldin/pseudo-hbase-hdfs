@@ -12,6 +12,8 @@ services:
       - "16030:16030"
     networks:
       - hbase
+    depends_on:
+      - hdfs-pseudo
 
   hdfs-pseudo:
     build: ./hdfs-pseudo
