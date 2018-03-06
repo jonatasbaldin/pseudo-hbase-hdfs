@@ -2,7 +2,7 @@ version: "3"
 
 services:
   hbase-pseudo:
-    build: ./hbase-pseudo
+    image: 'jonatasbaldin/hbase-pseudo'
     ports:
       - "8080:8080"
       - "8085:8085"
@@ -16,7 +16,7 @@ services:
       - hdfs-pseudo
 
   hdfs-pseudo:
-    build: ./hdfs-pseudo
+    image: 'jonatasbaldin/hdfs-pseudo'
     ports:
       - "50070:50070"
     volumes:
