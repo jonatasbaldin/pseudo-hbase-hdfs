@@ -2,10 +2,11 @@ FROM ubuntu:16.04
 MAINTAINER Jonatas Baldin jonatas.baldin@gmail.com
 
 RUN apt-get update && \
-    apt-get install wget default-jdk ssh rsync -y
+    apt-get install wget default-jdk-headless ssh rsync -y
 
 RUN wget http://apache.uniminuto.edu/hadoop/common/hadoop-2.9.0/hadoop-2.9.0.tar.gz && \
     tar xfz hadoop-2.9.0.tar.gz && \
+    rm -rf hadoop-2.9.0.tar.gz && \
     mv hadoop-2.9.0 /opt/hadoop
 
 # Hadoop controls its deamons through passwordless SSH
